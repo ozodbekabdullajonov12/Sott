@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:sott/features/home_page/presentation/manager/home_bloc.dart';
 import 'package:sott/features/home_page/presentation/manager/home_state.dart';
 import 'package:sott/features/home_page/presentation/pages/home_item.dart';
@@ -27,6 +28,37 @@ class HomeView extends StatelessWidget {
             return CustomScrollView(
               slivers: [
                 SottAppBar(),
+                SliverToBoxAdapter(child: SizedBox(height: 20.h)),
+                SliverToBoxAdapter(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                        child: Text(
+                          "Recommended",
+                          style: TextStyle(
+                            color: Color(0xFF1A1528),
+                            fontWeight: FontWeight.w700,
+                            fontSize: 20,
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                        child: Text(
+                          "See all",
+                          style: TextStyle(
+                            color: Color(0xFFFF8811),
+                            fontSize: 14,
+                            fontWeight: FontWeight.w700,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                SliverToBoxAdapter(child: SizedBox(height: 20)),
                 SliverGrid(
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,
